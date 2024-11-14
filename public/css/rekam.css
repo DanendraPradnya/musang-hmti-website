@@ -1,0 +1,70 @@
+/* Container for rekam jejak section */
+.rekam-jejak {
+    padding: 50px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.rekam-jejak-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:10px;
+}
+
+/* Individual card styling */
+.card-rekam-jejak {
+    background-color: white;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.class-kandidat {
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* Image styling */
+.card-rekam-jejak img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* More Info section */
+.more-info {
+    display: none; /* Initially hidden */
+    margin-top: 10px;
+}
+
+/* Button for More Info */
+.more-info-btn {
+    background-color: #785233;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.button-div {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;
+}
+
+.more-info-btn:hover {
+    background-color: #ffffff;
+    color: #785233;
+    border-color: #785233;
+    border-width: 3px;
+    border-style: solid;
+}

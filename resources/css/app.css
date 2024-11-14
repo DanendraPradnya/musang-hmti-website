@@ -1,0 +1,297 @@
+/* LANDING PAGE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:6rem;
+    padding-right:6rem;
+}
+
+.navbar .lm{
+    position: sticky;
+    width: 4rem;
+    height: auto;
+
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #785233;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    font-size: medium;
+}
+
+.nav-links a:hover {
+    border-radius: 10px;
+    width: max-content;
+    box-sizing: border-box;
+    color: #9e6c43;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+.login-btn {
+    color: #ffffff;
+    background-color: #785233e9;
+    border-radius: 8px;
+}
+
+.register-btn {
+    color: #785233e4;
+    background-color: #f2f2f2;
+    border-color: white;
+    border-radius: 8px;
+}
+
+.daftar-btn{
+    margin-top: 20px;
+    background-color: #785233;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.login-btn:hover{
+    background-color:#785233;
+    color: #ffffff;
+}
+.register-btn:hover {
+    background-color: #e2e1e1;
+    color: #644329;
+}
+
+main {
+    padding: 50px 40px;
+}
+
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0px 2px rgba(0, 0, 0, 0.05);
+}
+
+.content {
+    max-width: 750px;
+    justify-content: space-evenly;
+}
+
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 2.5em;
+    color: #785233;
+    margin: 20px 0;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.images {
+    position: relative;
+    max-width: 500px;
+}
+
+.images .img1 {
+    position: absolute;
+    top: 20px;;
+    left: -300px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.images .img2 {
+    position: relative;
+    bottom: 30px;
+    right: -30px;
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* TENTANG  */
+.about-section {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 1000px;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.about-text {
+    flex: 2;
+    margin-left: 40px;
+}
+
+.about-text h2 {
+    color: #785233;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.line {
+    width: 100% ;
+    height: 2px;
+    background-color: #6e6e6e;
+    margin: 10px 0;
+}
+
+.about-text p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333333;
+}
+
+.f1 {
+    font-size: small;
+   padding-left: 1rem ; 
+}
+
+/* RANGKAIAN KEGIATAN  */
+
+
+/* Styling untuk section rangkaian kegiatan */
+.rangkaian-kegiatan {
+    text-align: center;
+    padding: 50px 40px;
+}
+
+.rangkaian-kegiatan h1 {
+    font-size: 2.5em;
+    color: #785233;
+    margin-bottom: 20px;
+}
+
+.rangkaian-kegiatan p {
+    font-size: 1.1em;
+    color:#785233;
+    margin-bottom: 40px;
+}
+
+/* Styling container untuk card kegiatan */
+.kegiatan-container {
+    margin: 0px 50 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+/* Styling setiap card kegiatan */
+.card {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card .icon img {
+    width: 350px;
+    height: 200px;
+    max-height: 300px; 
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    color: #785233;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1em;
+    text-align: justify;
+    color: #785233;
+    margin-bottom: 20px;
+}
+
+
+
+.card .btn {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #1f807d;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+    background-color: #14645d;
+}

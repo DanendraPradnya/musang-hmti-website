@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    place-items: center;
+    margin: 0;
+    height: 100%h;
+    padding: 0 24px;
+    background-image: url('Pakem Bongkaran.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'arial', sans-serif;
+    color: #f9f9f9;
+    animation: rotate 6s infinite alternate linear;
+    position: relative;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--background-overlay);
+}
+
+.login-container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 70px 30px 44px;
+    border-radius: 20px;
+    background-color: rgba(249, 249, 249, 0.66);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+@media (min-width: 448px) {
+    .login-card {
+        width: 70%;
+        min-width: 400px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .login-card {
+        padding: 0 44px;
+        width: 50%;
+        height: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* Logo styling */
+.login-card .logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 200px;
+    height: auto;
+}
+
+/* Heading styling */
+.login-container h2 {
+    font-size: 36px;
+    font-weight: bolder;
+    margin-bottom: 12px;
+    color: #785233;
+    font-family: arial , sans-serif; /* Menggunakan Times New Roman */
+}
+
+.login-container h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 48px;
+    color: #785233;
+    font-family: arial, sans-serif; /* Menggunakan Times New Roman */
+}
+
+/* Form styling */
+.login-form {
+    display: grid;
+    gap: 16px;
+    width: 100%;
+}
+
+.login-form > input {
+    height: 56px;
+    border-radius: 6px;
+    border: 0;
+    padding: 0 16px;
+    font-family: 'Times New Roman', Times, serif; /* Menggunakan Times New Roman */
+    font-size: 16px;
+    color: #f9f9f9;
+    background-color: #999492;
+}
+
+.login-form > input::placeholder {
+    color: rgba(255, 255, 255, 0.38);
+}
+
+.login-form > input:focus {
+    outline: 2px solid var(--color-primary);
+}
+
+.login-form > button {
+    height: 56px;
+    border-radius: 6px;
+    border: 0;
+    padding: 0 16px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: var(--color-secondary);
+    color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.375s;
+}
+
+.login-btn{
+    color: #ffffff;
+    background: linear-gradient(135deg, #785233, #9b6a4a);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px; 
+    font-weight: normal; 
+    cursor: pointer; 
+    transition: background 0.3s, transform 0.3s; 
+}
+
+.login-btn:hover {
+    font-weight: bold;
+    background: linear-gradient(135deg, #9b6a4a, #785233); /* Change gradient on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.login-form{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Link styling */
+.login-form > a {
+    font-size: 16px;
+    color: #785233;
+    text-align: left;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.login-form > a:hover {
+    text-decoration: underline;
+}
