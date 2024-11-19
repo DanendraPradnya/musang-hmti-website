@@ -5,8 +5,11 @@ export default {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
-        './resources/**/*.blade.php',
-        './resources/**/*.js',
+        './resources/views/musang.blade.php',
+        './resources/views/login.blade.php',
+        './resources/views/rangkaian.blade.php',
+        './resources/views/register.blade.php',
+        './resources/js/app.js',
         './resources/**/*.vue',
     ],
     theme: {
@@ -14,6 +17,10 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+
+            colors: {
+                'Primary': '#785233',    
+            }
         },
     },
     plugins: [],

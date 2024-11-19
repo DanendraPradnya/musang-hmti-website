@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #f8f9fa;
     color: #333;
 }
@@ -54,7 +54,7 @@ body {
     max-width: 10%;
 }
 
-.contact-cards .img{
+.contact-cards .img {
     position: relative;
     max-width: 35%;
 }
@@ -74,16 +74,20 @@ body {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-20px); /* Naik 20px */
+        transform: translateY(-20px);
     }
     100% {
-        transform: translateY(0); /* Kembali ke posisi semula */
+        transform: translateY(0);
     }
 }
 
+.illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .illustration img {
     max-width: 35%;
     height: auto;
-    margin-top: 50px;
-    animation: naikTurun 1s ease-in-out infinite; /* Menambahkan animasi */
+    animation: naikTurun 1s ease-in-out infinite;
 }

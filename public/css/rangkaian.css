@@ -1,29 +1,15 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: arial, sans-serif;
-    background: linear-gradient(to right, #e0eafc, #cfdef3);
-    color: #333;
-    line-height: 1.5;
-}
-
-.container {
+.slide-container {
+    background-color: #f0f0f0;
     display: flex;
     max-width: 850px;
     margin: 50px auto;
     padding: 30px;
-    background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     position: relative;
     flex-direction: column;
     row-gap: 25px;
     overflow: hidden;
-    
 }
 
 .title {
@@ -60,5 +46,3 @@ body {
     font-size: 16px;
     text-align: justify;
 }
-
-
