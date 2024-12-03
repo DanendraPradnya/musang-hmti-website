@@ -20,6 +20,7 @@ export default {
 
             colors: {
                 'Primary': '#785233',    
+                'musang': '#00000',    
             }
         },
     },

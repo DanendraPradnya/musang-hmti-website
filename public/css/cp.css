@@ -12,7 +12,7 @@ body {
 
 .contact-person {
     text-align: center;
-    padding: 50px 20px;
+    padding: 10px 5px;
 }
 
 .contact-person h1 {
@@ -74,7 +74,7 @@ body {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
     100% {
         transform: translateY(0);
