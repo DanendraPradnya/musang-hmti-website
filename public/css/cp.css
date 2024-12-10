@@ -1,18 +1,18 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
     color: #333;
 }
 
 .contact-person {
     text-align: center;
-    padding: 10px 5px;
+    padding: 50px 20px;
 }
 
 .contact-person h1 {
@@ -54,7 +54,7 @@ body {
     max-width: 10%;
 }
 
-.contact-cards .img {
+.contact-cards .img{
     position: relative;
     max-width: 35%;
 }
@@ -74,10 +74,10 @@ body {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-20px); /* Naik 20px */
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(0); /* Kembali ke posisi semula */
     }
 }
 
@@ -85,7 +85,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50vh; /* Menyesuaikan tinggi layar */
+    margin: 0;
 }
+
 .illustration img {
     max-width: 35%;
     height: auto;

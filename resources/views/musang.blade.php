@@ -6,10 +6,12 @@
     <title>Landing Page - MUSANG HMTI 2024</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
     <link rel="stylesheet" href="{{ asset('css/rekam.css') }}">
     <link rel="stylesheet" href="{{ asset('css/cp.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/votingbtn.css') }}">
 </head>
 <body>
     <header>
@@ -22,7 +24,42 @@
                 <li class="nav-item"><a class="nav-link" href="#rekamjejak">Rekam Jejak</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about-content">Tentang</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contactperson">Contact Person</a></li>
-                <li class="nav-item"><button class="login-btn" id="loginBtn" onclick="redirectToLogin()">Login</button></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('result') }}">Hasil Pemira</a></li>        
+                <!-- Dropdown Menu -->
+                @if (Auth::check())
+                    <li class="nav-item dropdown">
+                        <!-- Dropdown Button -->
+                        <a href="#" 
+                        id="dropdownToggle" 
+                        class="nav-link dropdown-toggle d-flex align-items-center gap-2" 
+                        role="button" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false">
+                            <img src="gambar/calon1.JPG" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px;">
+                            <span>{{ Auth::user()->name }}</span>
+                        </a>
+
+                        <!-- Dropdown Menu -->
+                        <ul class="dropdown-menu dropdown-menu-end shadow">
+                            <li>
+                                <a href="{{ route('profile') }}" class="dropdown-item">Profile</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form action="{{ route('signout') }}" method="POST" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item">Sign Out</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @else
+                    <!-- Login Button for non-authenticated users -->
+                    <li class="nav-item">
+                        <button class="login-btn" id="loginBtn" onclick="redirectToLogin()">Login</button>
+                    </li>
+                @endif
+
             </ul>
         </nav>
     </header>
@@ -30,13 +67,24 @@
     <main>
         <!-- Landing Section Start -->
         <section class="landing" id="beranda">
-            <div class="content">
-                <h1>APA ITU MUSANG HMTI 2024?</h1>
-                <p>
-                    Musang HMTI atau Musyawarah Anggota Himpunan Mahasiswa Teknologi adalah kegiatan musyawarah yang rutin
-                    dilaksanakan setiap akhir tahun untuk evaluasi fungsionaris HMTI sebelumnya dan pemilihan ketua HMTI.
-                </p>
-            </div>
+        <div class="content">
+            <h1>APA ITU MUSANG HMTI 2024?</h1>
+            <p>
+                Musang HMTI atau Musyawarah Anggota Himpunan Mahasiswa Teknologi adalah kegiatan musyawarah yang rutin
+                dilaksanakan setiap akhir tahun untuk evaluasi fungsionaris HMTI sebelumnya dan pemilihan ketua HMTI.
+            </p>
+            <!-- Tombol Pendaftaran yang mengarah langsung ke halaman pendaftaran -->
+            <a href="{{ route('pendaftaran.index') }}" class="btn" style="background-color: #785233; color: white; border: none; padding: 10px 20px; margin:0px 50px 0px 0px; border-radius: 5px; text-align: center; text-decoration: none;">
+                Pendaftaran Calon Ketua HMTI 2025
+            </a>
+        </div>
+        <div class='voting'>
+        <a href="{{ route('pendaftaran.index') }}" class="btn" style="background-color: #785233; color: white; border: none; padding: 10px 20px; margin:0px 50px 0px 0px; border-radius: 5px; text-align: center; text-decoration: none;">
+                Pendaftaran Calon Ketua HMTI 2025
+            </a>
+        </div>
+        
+
             <div class="slider">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -268,9 +316,7 @@
             </div>
         </section>
         <!-- Contact Person Section End -->
-
-    {{-- Footer Start --}}
-    <footer class="bg-Primary">
+        <footer class="bg-Primary">
     <div class="container">
         <div class="flex flex-row ">
         <div class="w-full px-4 mb-3 text-slate-300 font-medium md:w-1/3">
@@ -315,8 +361,7 @@
         </div>
     </div>
     </footer>
-    {{-- Footer End --}}
-</main>
+    </main>
 
     <button class="btn-home" onclick="document.getElementById('beranda').scrollIntoView({ behavior: 'smooth'})">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up">
@@ -363,6 +408,22 @@
             element.style.display = "none";   // Hide more info
         }
     }
+
+    // Menangani klik pada tombol dropdown
+const dropdownToggle = document.getElementById('dropdownToggle');
+const dropdownMenu = document.getElementById('dropdownMenu');
+
+// Toggle dropdown saat tombol diklik
+dropdownToggle.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('hidden');
+});
+
+// Menutup dropdown jika klik di luar dropdown
+window.addEventListener('click', (e) => {
+    if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.classList.add('hidden');
+    }
+});
 </script>
 </body>
 </html>

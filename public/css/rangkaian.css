@@ -1,25 +1,40 @@
-.slide-container {
-    background-color: #f0f0f0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    color: #333;
+    line-height: 1.5;
     display: flex;
-    max-width: 850px;
-    margin: 50px auto;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
     flex-direction: column;
-    row-gap: 25px;
-    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
 }
 
 .title {
     text-align: center;
-    font-weight: bolder;
+    font-weight: bold;
     color: #fefefe;
     background: linear-gradient(to right, #785233, #8c7b6c);
     padding: 15px 0;
-    border-radius: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .image-container {
@@ -28,10 +43,11 @@
 }
 
 .image-container img {
-    max-width: 70%;
+    max-width: 100%;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 400px; /* Menambahkan batas tinggi agar gambar tidak terlalu besar */
 }
 
 .content {
@@ -39,10 +55,34 @@
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
 .content p {
     margin-bottom: 18px;
     font-size: 16px;
     text-align: justify;
+    line-height: 1.6;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .image-container img {
+        max-height: 300px; /* Menyesuaikan tinggi gambar untuk layar kecil */
+    }
 }

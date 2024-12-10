@@ -53,4 +53,22 @@ class AuthController extends Controller
             return redirect()->back()->with('gagal', 'Email dan Password anda Salah');
         }
     }
+    // Halaman profil setelah login
+    public function profilePage()
+    {
+        return view('profile'); // Halaman profil yang akan Anda buat
+    }
+
+    // Proses sign out
+    public function signOut(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        
+        return redirect()->route('musang'); // Arahkan ke halaman login setelah sign out
+    }
+
 }
+
+

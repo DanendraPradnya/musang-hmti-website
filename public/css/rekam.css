@@ -1,35 +1,15 @@
+/* Container for rekam jejak section */
 .rekam-jejak {
+    padding: 50px;
     background-color: #f0f0f0;
     text-align: center;
-    padding-bottom: 5rem;
-}
-.line-break {
-    display: flex;
-    width: 100%;
-    height: 10px;
-}
-
-.title-rekam-jejak {
-    text-align: center;
-    background: linear-gradient(to top, #5e3a1f, #945c31);
-    padding: 1rem 1rem;
-    font-size: xx-large;
-    font-weight: bolder;
-    color: #ffffff;
-    margin-bottom: 1rem;
-}
-.line-break {
-    color: #785233;
-    width: 1rem;
-    height: fit-content;
 }
 
 .rekam-jejak-container {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap:10px;
 }
 
 /* Individual card styling */
@@ -40,15 +20,13 @@
     border-radius: 10px;
     width: 350px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left;
 }
 
 .class-kandidat {
     display: flex;
     justify-content: center;
-    font-weight: bold;
-    font-size: x-large;
-    margin-bottom: 1rem;
+    
 }
 
 /* Image styling */

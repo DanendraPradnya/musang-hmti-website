@@ -1,0 +1,29 @@
+/* Gaya umum untuk tombol */
+.btn {
+    background-color: #785233; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    border: none; /* Hilangkan border */
+    padding: 10px 20px; /* Padding atas/bawah: 10px, kiri/kanan: 20px */
+    margin: 0 50px 0 0; /* Margin kanan: 50px, margin atas/bawah/kiri: 0 */
+    border-radius: 5px; /* Sudut melengkung 5px */
+    text-align: center; /* Teks di tengah */
+    text-decoration: none; /* Hilangkan garis bawah link */
+    display: inline-block; /* Agar tombol menyesuaikan ukuran konten */
+    font-size: 16px; /* Ukuran font */
+    font-weight: bold; /* Teks tebal */
+    transition: all 0.3s ease; /* Efek transisi halus */
+    cursor: pointer; /* Pointer saat di-hover */
+  }
+  
+  /* Efek hover untuk tombol */
+  .btn:hover {
+    background-color: #6b482c; /* Warna lebih gelap saat di-hover */
+    transform: scale(1.05); /* Perbesar tombol sedikit saat di-hover */
+  }
+  
+  /* Efek fokus (misalnya saat menggunakan keyboard tab) */
+  .btn:focus {
+    outline: 3px solid #f5c76a; /* Garis fokus di sekitar tombol */
+    outline-offset: 3px; /* Jarak outline dari tombol */
+  }
+  

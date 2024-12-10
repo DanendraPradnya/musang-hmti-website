@@ -6,6 +6,7 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/musang.blade.php',
+        './resources/views/result2.blade.php',
         './resources/views/login.blade.php',
         './resources/views/rangkaian.blade.php',
         './resources/views/register.blade.php',
@@ -17,11 +18,15 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
-
             colors: {
-                'Primary': '#785233',    
-                'musang': '#00000',    
-            }
+                'Primary': '#785233',  // Menambahkan warna primary
+                'musang': '#000000',
+                'cokelat-tua': '#7E4C3C',
+                'cokelat-muda': '#ECE3D9',
+                'putih': '#FFFFFF',
+                'hitam': '#1C1C1C',
+                'kuning-emas': '#F5D697',
+            },
         },
     },
     plugins: [],
