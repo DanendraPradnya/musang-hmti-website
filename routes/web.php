@@ -3,12 +3,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('musang');
 });
 
 // Rute statis dengan penamaan konsisten
+Route::view('/musang', 'musang')->name('musang.index');
 Route::view('/musang', 'musang')->name('musang');
 Route::view('/login', 'login')->name('login');
 Route::view('/register', 'register')->name('register');
@@ -16,7 +18,7 @@ Route::view('/rangkaian', 'rangkaian')->name('rangkaian');
 Route::view('/profile', 'profile')->name('profile');
 Route::view('/result', 'result')->name('result');
 Route::view('/vote', 'vote')->name('vote');
-Route::view('/musang', 'musang')->name('musang.index');
+// Route::view('/musang', 'musang')->name('musang');
     
 // Rute dinamis dengan controller
 Route::get('/result2', [VoteController::class, 'showResults'])->name('result2');

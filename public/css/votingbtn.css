@@ -16,8 +16,7 @@
   }
   
   /* Efek hover untuk tombol */
-  .btn:hover {
-    background-color: #6b482c; /* Warna lebih gelap saat di-hover */
+  .btn:hover { /* Warna lebih gelap saat di-hover */
     transform: scale(1.05); /* Perbesar tombol sedikit saat di-hover */
   }
   

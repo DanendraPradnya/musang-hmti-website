@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
     <link rel="stylesheet" href="{{ asset('css/rekam.css') }}">
     <link rel="stylesheet" href="{{ asset('css/cp.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/votingbtn.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/votingbtn.css') }}"> -->
 </head>
 <body>
     <header>
@@ -24,7 +24,7 @@
                 <li class="nav-item"><a class="nav-link" href="#rekamjejak">Rekam Jejak</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about-content">Tentang</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contactperson">Contact Person</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('result') }}">Hasil Pemira</a></li>        
+                <li class="nav-item"><a class="nav-link" href="{{ route('result2') }}">Hasil Pemira</a></li>        
                 <!-- Dropdown Menu -->
                 @if (Auth::check())
                     <li class="nav-item dropdown">
@@ -67,24 +67,24 @@
     <main>
         <!-- Landing Section Start -->
         <section class="landing" id="beranda">
-        <div class="content">
+        <div class="content justify-center">
             <h1>APA ITU MUSANG HMTI 2024?</h1>
             <p>
                 Musang HMTI atau Musyawarah Anggota Himpunan Mahasiswa Teknologi adalah kegiatan musyawarah yang rutin
                 dilaksanakan setiap akhir tahun untuk evaluasi fungsionaris HMTI sebelumnya dan pemilihan ketua HMTI.
             </p>
             <!-- Tombol Pendaftaran yang mengarah langsung ke halaman pendaftaran -->
-            <a href="{{ route('pendaftaran.index') }}" class="btn" style="background-color: #785233; color: white; border: none; padding: 10px 20px; margin:0px 50px 0px 0px; border-radius: 5px; text-align: center; text-decoration: none;">
-                Pendaftaran Calon Ketua HMTI 2025
-            </a>
-        </div>
-        <div class='voting'>
-        <a href="{{ route('pendaftaran.index') }}" class="btn" style="background-color: #785233; color: white; border: none; padding: 10px 20px; margin:0px 50px 0px 0px; border-radius: 5px; text-align: center; text-decoration: none;">
-                Pendaftaran Calon Ketua HMTI 2025
-            </a>
-        </div>
-        
+            <div class="flex items-center gap-3 justify-start">
+        <a href="{{ route('pendaftaran.index') }}" class="btn bg-neutral-400 text-white rounded-md text-center flex hover:bg-neutral-500">
+        Pendaftaran Calon Ketua HMTI 2025
+        </a>
+        <a href="{{ route('vote') }}" class="btn bg-yellow-700 text-white rounded-md text-center flex px-11 hover:bg-yellow-600 ">
+            Voting Calon Ketua HMTI 2025
+        </a>
+    </div>
 
+            </div>
+        </div>
             <div class="slider">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -236,14 +236,14 @@
 
         <!-- Rekam Jejak Section Start -->
         <section id="rekamjejak" class="rekam-jejak">
-            <h1 class="title-rekam-jejak">REKAM JEJAK KANDIDAT</h1>
+            <h1 class="title-rekam-jejak font-bold text-4xl text-Primary mb-3">REKAM JEJAK KANDIDAT</h1>
             <div class="rekam-jejak-container">
                 <div class="card-rekam-jejak">
-                    <h1 class="class-kandidat">Krisna</h1>
+                    <h1 class="class-kandidat text-xl font-semibold">Krisna</h1>
                     <img src="gambar/calon1.JPG" alt="Foto Calon 1" class="candidate-img">
                     <p><strong>Pengalaman Organisasi:</strong> Anggota Fungsionaris HMTI 2024</p>
                     <div id="moreInfo1" class="more-info" style="display:none;">
-                        <p>Ketua Panitia Musang HMTI 2024</p>
+                        <p class="text-justify text-base mb-3">Ketua Panitia Musang HMTI 2024, Koordinator Sie Keamanan dan Perlengkapan IT-ESEGA 2024</p>
                     </div>
                     <p><strong>Prestasi:</strong> Finalis Lomba ITCC HMTI 2023</p>
                     <div class="button-div">
@@ -251,11 +251,11 @@
                     </div>
                 </div>
                 <div class="card-rekam-jejak">
-                    <h1 class="class-kandidat">Riyandhi</h1>
+                    <h1 class="class-kandidat text-xl font-semibold">Riyandhi</h1>
                     <img src="gambar/calon4.JPG" alt="Foto Calon 1" class="candidate-img">
                     <p><strong>Pengalaman Organisasi:</strong> Anggota Fungsionaris HMTI 2024</p>
                     <div id="moreInfo2" class="more-info" style="display:none;">
-                        <p>KORLAP TEKNOLOGI INFORMASI 2024, PENAKLUK TEKNOLOGI INFOMRASI, KORDINATOR KEAMANAN DAN PERLENGKAPAN MUSANG HMTI 2024 </p>
+                    <p class="text-justify text-base mb-3">Koordinator Lapangan Teknologi Informasi, Koordinator Sie Keamanan dan Perlengkapan MUSANG HMTI 2024 </p>
                     </div>
                     <p><strong>Prestasi:</strong> Finalis Lomba ITCC HMTI 2023</p>
                     <div class="button-div">
@@ -263,11 +263,11 @@
                     </div>
                 </div>
                 <div class="card-rekam-jejak">
-                    <h1 class="class-kandidat">Damar</h1>
+                    <h1 class="class-kandidat text-xl font-semibold">Damar</h1>
                     <img src="gambar/calon2.JPG" alt="Foto Calon 1" class="candidate-img">
                     <p><strong>Pengalaman Organisasi:</strong> Anggota Fungsionaris HMTI 2024</p>
                     <div id="moreInfo3" class="more-info" style="display:none;">
-                        <p>KORLAP TEKNOLOGI INFORMASI 2024, PENAKLUK TEKNOLOGI INFOMRASI, KORDINATOR KEAMANAN DAN PERLENGKAPAN MUSANG HMTI 2024 </p>
+                        <p class="text-justify text-base mb-3">Koordinator Sie Keamanan dan Perlengkapan BUILD IT 2024, Wakil Ketua MUSANG HMTI 2024 </p>
                     </div>
                     <p><strong>Prestasi:</strong> Finalis Lomba ITCC HMTI 2023</p>
                     <div class="button-div">
@@ -275,11 +275,11 @@
                     </div>
                 </div>
                 <div class="card-rekam-jejak">
-                    <h1 class="class-kandidat">Danendra</h1>
+                    <h1 class="class-kandidat text-xl font-semibold">Danendra</h1>
                     <img src="gambar/calon3.JPG" alt="Foto Calon 1" class="candidate-img">
                     <p><strong>Pengalaman Organisasi:</strong> Anggota Fungsionaris HMTI 2024</p>
                     <div id="moreInfo4" class="more-info" style="display:none;">
-                        <p>Anggota Sie Pubdok ITCC 2023</p>
+                        <p class="text-justify text-base mb-3">Koordinator Sie Publikasi dan Dokumentasi BUILD IT 2024, Anggota Sie Publikasi dan Dokumentasi ITCC 2023</p>
                     </div>
                     <p><strong>Prestasi:</strong> Finalis Lomba ITCC HMTI 2023</p>
                     <div class="button-div">

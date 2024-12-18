@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('candidate_name');
             $table->integer('vote_count')->default(0);
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

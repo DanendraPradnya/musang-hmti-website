@@ -5,31 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Pemilihan Suara</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/result2.css') }}" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
     <style>
+        .chart-wrapper {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            height: 510px;
+        }
+
         .chart-container {
-            max-width: 400px; /* Membatasi ukuran maksimal */
-            margin: 0 auto; /* Agar diagram berada di tengah */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex: 1;
+            min-width: 400px;
+            height: 480px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 14px;
         }
     </style>
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gradient-to-b from-brown-light to-white min-h-screen font-sans bg-cover bg-center" style="background-image: url('/css/Pakem Bongkaran.png');">
 
     <!-- Header Section -->
-    <header class="bg-yellow-900 p-4">
+    <header class="bg-white p-4 relative">
+        <!-- Tombol Kembali -->
+        <div class="absolute top-24 left-4">
+            <a href="javascript:history.back()" class="text-white bg-yellow-900 px-4 py-2 rounded shadow hover:bg-yellow-800 transition duration-200">
+                &#8592; Kembali
+            </a>
+        </div>
+
         <div class="container mx-auto flex items-center justify-between text-white">
-            <img src="gambar/LOGO MUSANG 2024 rz.png" alt="Logo" class="h-12">
-            <h1 class="text-2xl font-semibold">Hasil Pemilihan 2024</h1>
+            <img src="gambar/LOGO MUSANG 2024 rz.png" alt="Logo" class="w-12">
+            <h1 class="text-4xl font-bold text-yellow-900">HASIL PEMILIHAN 2024</h1>
             <img src="gambar/logo ti.png" alt="Logo Sponsor" class="h-12">
         </div>
     </header>
 
     <!-- Main Content Section -->
-    <main class="container mx-auto py-10">
+    <main class="container mx-auto py-10 mb-28">
 
         <!-- Title Section -->
         <div class="text-center mb-8">
@@ -37,63 +60,54 @@
             <p class="text-lg mt-2">SUARA SEMENTARA: {{ $totalVotes }} SUARA</p>
         </div>
 
-        <!-- Pie Chart Section -->
-        <div class="chart-container bg-white rounded-lg shadow-lg p-6">
-            <canvas id="voteChart"></canvas>
+        <!-- Chart Wrapper -->
+        <div class="chart-wrapper">
+            <!-- Pie Chart Section -->
+            <div class="chart-container">
+                <h3 class="text-center font-semibold text-lg ">Diagram Hasil Pemilihan</h3>
+                <canvas id="voteChart"></canvas>
+            </div>
+
+            <!-- Bar Chart Section -->
+            <div class="chart-container">
+                <h3 class="text-center font-semibold text-lg mb-16">Histogram Hasil Pemilihan</h3>
+                <canvas id="barChart"></canvas>
+            </div>
         </div>
 
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-yellow-900 py-4">
+    <footer class="bg-white py-4">
         <div class="container mx-auto text-center">
-            <div class="flex flex-wrap">
-                <div class="w-full">
-                    <p class="font-semibold text-base text-slate-200">©MUSANG HMTI 2024</p>
-                </div>
-            </div>
+            <p class="font-semibold text-base text-yellow-900">©MUSANG HMTI 2024</p>
         </div>
     </footer>
 
     <!-- JavaScript untuk Chart -->
     <script>
-        // Data dari backend Laravel
         const candidates = @json($candidates);
-        // Total suara
-        const totalVotes = {{ $totalVotes}};
-        // Data untuk Chart.js
-        const data = {
+        const totalVotes = {{ $totalVotes }};
+
+        // Pie Chart
+        const dataPie = {
             labels: candidates.map(candidate => candidate.candidate_name),
             datasets: [{
                 label: 'Hasil Pemilihan',
                 data: candidates.map(candidate => candidate.vote_count),
-                backgroundColor: [
-                    '#F59E0B',
-                    '#EF4444',
-                    '#3B82F6',
-                    '#22C55E',
-                    '#6366F1',
-                    '#8B9467',
-                    '#F472B6',
-                    '#FBBF24',
-                    '#34C759',
-                    '#4F46E5'
-                ],
+                backgroundColor: ['#F59E0B', '#EF4444', '#3B82F6', '#22C55E', '#6366F1'],
                 hoverOffset: 4
             }]
         };
 
-        // Konfigurasi Chart.js
-        const config = {
+        const ctxPie = document.getElementById('voteChart').getContext('2d');
+        new Chart(ctxPie, {
             type: 'pie',
-            data: data,
+            data: dataPie,
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
                 plugins: {
-                    legend: {
-                        position: 'bottom'
-                    },
+                    legend: { position: 'bottom' },
                     tooltip: {
                         callbacks: {
                             label: function(context) {
@@ -105,12 +119,29 @@
                     }
                 }
             }
-        };
+        });
 
-        // Render Chart
-        const ctx = document.getElementById('voteChart').getContext('2d');
-        new Chart(ctx, config);
+        // Bar Chart
+        const ctxBar = document.getElementById('barChart').getContext('2d');
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: candidates.map(candidate => candidate.candidate_name),
+                datasets: [{
+                    label: 'Jumlah Suara',
+                    data: candidates.map(candidate => candidate.vote_count),
+                    backgroundColor: ['#F59E0B', '#EF4444', '#3B82F6', '#22C55E', '#6366F1']
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
     </script>
 </body>
 
 </html>
+        

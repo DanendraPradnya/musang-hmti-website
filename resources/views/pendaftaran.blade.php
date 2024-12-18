@@ -6,13 +6,14 @@
     <title>Pendaftaran Calon Ketua HMTI 2025</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Menambahkan jQuery -->
+    <link href="{{ asset('css/pendaftaran.css') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}"> <!-- Pastikan CSRF Token ada -->
 </head>
-<body class="bg-gray-100 font-sans">
+<body style="background-image: url('/css/Pakem Bongkaran.png')">
 
     <!-- Container Utama -->
-    <div class="max-w-4xl mx-auto py-10 px-6 bg-white shadow-md rounded-lg">
-        <h1 class="text-3xl font-bold text-center text-brown-800 mb-8">Pendaftaran Calon Ketua HMTI 2025</h1>
+    <div class="max-w-4xl mx-auto py-10 px-6 shadow-md rounded-lg mt-5 bg-white" >
+        <h1 class="text-3xl font-bold text-center text-brown-800 mb-8">FORM PENDAFTARAN KANDIDAT KETUA</h1>
 
         <!-- Form Container -->
         <form id="pendaftaranForm" action="{{ route('pendaftaran.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
@@ -31,8 +32,8 @@
 
             <!-- Input No. Whatsapp/id line -->
             <div>
-                <label class="block text-gray-700 font-medium mb-2">No. Whatsapp/id line</label>
-                <input type="text" name="kontak" placeholder="No. Whatsapp/id line" class="w-full px-4 py-2 border rounded-md focus:ring focus:ring-brown-200" required>
+                <label class="block text-gray-700 font-medium mb-2">No. WhatsApp/ID line</label>
+                <input type="text" name="kontak" placeholder="No. WhatsApp/ID Line" class="w-full px-4 py-2 border rounded-md focus:ring focus:ring-brown-200" required>
             </div>
 
             <!-- Upload Foto Profil -->
@@ -53,7 +54,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md">Daftar</button>
+            <button type="submit" class="w-full bg-yellow-700 text-white py-2 rounded-md">Daftar</button>
         </form>
     </div>
 
@@ -108,7 +109,7 @@
             popup.classList.remove("flex");
 
             // Redirect ke halaman musang setelah tombol tutup ditekan
-            window.location.href = "{{ route('musang.index') }}";  // Mengarah ke route 'musang.index'
+            window.location.href = "{{ route('musang') }}";  // Mengarah ke route 'musang.index'
         });
     </script>
 </body>

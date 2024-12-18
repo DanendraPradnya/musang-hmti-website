@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Polling Kandidat</title>
+    <title>Vote Kandidat</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
@@ -16,13 +16,12 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-b from-brown-light to-white min-h-screen font-sans">
-
+<body class="bg-gradient-to-b from-brown-light to-white min-h-screen font-sans bg-cover bg-center" style="background-image: url('/css/Pakem Bongkaran.png');">
     <!-- Container Utama -->
     <div class="max-w-6xl mx-auto py-16 px-6">
         <!-- Judul -->
         <h1 class="text-5xl font-extrabold text-center text-brown-dark mb-12">
-            Polling Kandidat
+            PEMILIHAN KETUA HMTI 2025
         </h1>
 
         <!-- Grid Kandidat -->
